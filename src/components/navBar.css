@@ -1,0 +1,13 @@
+.navBarContent {
+    text-align: center;
+    background: #282c34;
+}
+
+.navBarItem {
+    justify-content: center;
+}
+
+.navBarItem a {
+    text-decoration: none;
+    color: rgb(240, 229, 229);
+}
