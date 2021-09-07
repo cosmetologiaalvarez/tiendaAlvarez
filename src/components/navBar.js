@@ -6,7 +6,7 @@ const NavBar = () => {
     return (
         <Grid container className="navBarContent">
             <Grid container className="navBarItem" item xs={4}>
-                <a href="#">Tienda</a>
+                <a href="#">Shop</a>
             </Grid>
             <Grid container className="navBarItem" item xs={4}>
                 <a href="#">Us</a>
