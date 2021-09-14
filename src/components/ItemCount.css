@@ -1,0 +1,12 @@
+.CardRoot {
+    width: 275;
+    background-color: slategray;
+}
+  
+.CardTitle {
+    font-size: 14px;
+}
+
+.CardButton {
+    margin: 1rem 1rem;
+}
