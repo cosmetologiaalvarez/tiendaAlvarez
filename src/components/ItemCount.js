@@ -18,15 +18,10 @@ const ItemCount = (props) => {
     }
 
     return <>
-        <Card className='CardRoot' >
-            <CardContent>
-                <h3 className="CardTitle">{props.name}</h3>
-                <p className="CardTitle">Disponibilidad {props.stock}</p>
-                <TextField size="small" disabled value={state}></TextField>
-                <Button variant="contained" color="secondary" size="small" className="CardButton" onClick={removeItem}>-</Button>
-                <Button variant="contained" color="primary" size="small" className="CardButton" onClick={addItem} > +</Button>
-            </CardContent>
-        </Card>
+        <p className="CardTitle">Disponibilidad {props.stock}</p>
+        <TextField size="small" disabled value={state}></TextField>
+        <Button variant="contained" color="secondary" size="small" className="CardButton" onClick={removeItem}>-</Button>
+        <Button variant="contained" color="primary" size="small" className="CardButton" onClick={addItem} > +</Button>
     </>
 }
 
