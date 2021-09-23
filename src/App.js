@@ -1,14 +1,12 @@
 import './App.css';
 import NavBar from './components/NavBar.js';
-import ItemDetailContainer from './components/ItemDetailContainer.js';
-import ItemListContainer from './components/ItemListContainer.js';
+import Router from './components/Router.js';
 
 function App() {
   return (
     <>
       <NavBar/>
-      <ItemListContainer greeting="Item"/>
-      <ItemDetailContainer/>
+      <Router/>
     </>
   );
 }

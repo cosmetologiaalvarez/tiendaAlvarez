@@ -1,16 +1,21 @@
 import React from 'react';
-import {Card, CardContent} from '@material-ui/core/';
-import ItemCount from './ItemCount';
+import {Card, CardContent, Button} from '@material-ui/core/';
+import { useHistory } from "react-router-dom"
 
 const Item = (props) => {
+    const history = useHistory();
+    const verDetalle = (item) => {
+        history.push("/item/"+item)
+    }
     return <>
         <Card className='CardRoot'>
             <CardContent>
                 <h2>{props.name}</h2>
-                <ItemCount stock={props.stock}/>
+                <Button variant="contained" onClick={()=> {verDetalle(props.id)}} >Ver Detalle</Button>
             </CardContent>
         </Card>
     </>
 }
+
 
 export default Item;

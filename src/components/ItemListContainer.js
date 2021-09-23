@@ -20,7 +20,6 @@ const ItemListContainer = (props) => {
         fetchProductos().then(response => {setProductos(response)}).catch(error => setProductos([]))
     }, [])
     return <>
-        <h2 style={{textAlign:"center"}}>{props.greeting}</h2>
         <ItemList prod={productos}/>
     </>
 }
