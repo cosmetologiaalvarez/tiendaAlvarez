@@ -1,6 +1,7 @@
 import React from "react";
 import ItemDetailContainer from './ItemDetailContainer.js';
 import ItemListContainer from './ItemListContainer.js';
+import Cart from './Cart.js';
 import {
   BrowserRouter,
   Switch,
@@ -19,6 +20,9 @@ const Router = () => {
                 </Route>
                 <Route path="/item/:id">
                     <ItemDetailContainer />
+                </Route>
+                <Route path="/cart">
+                    <Cart />
                 </Route>
             </Switch>
         </BrowserRouter>
