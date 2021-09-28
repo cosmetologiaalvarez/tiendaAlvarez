@@ -3,7 +3,7 @@ import './ItemCount.css';
 import {Button, TextField, Card, CardContent} from '@material-ui/core/';
 
 const ItemCount = (props) => {
-    const [state, setState] = useState(0)
+    const [state, setState] = useState(1)
 
     const addItem = () => {
         if (props.stock > state) {

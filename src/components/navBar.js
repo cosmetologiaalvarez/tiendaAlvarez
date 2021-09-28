@@ -18,7 +18,7 @@ const NavBar = () => {
             <Grid container className="navBarItem" item xs={2}>
                 <a href="#">Gallery</a>
             </Grid>
-            <Grid item xs={2}><CartWidget/></Grid>
+            <Grid item xs={1}><CartWidget/></Grid>
         </Grid>
     );
 };
