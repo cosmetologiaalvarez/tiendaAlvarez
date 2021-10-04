@@ -28,8 +28,11 @@ const ItemDetail = (props) => {
     }
 
     const addToCart = (item) => {
-        item['cantidad'] = countState;
-        cartHook.addItem(item)
+        cartHook.addItem(item, countState)
+    }
+
+    const clearCart = (item) => {
+        cartHook.clearCart()
     }
 
     return <>
