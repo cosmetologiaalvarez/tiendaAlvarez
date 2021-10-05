@@ -3,9 +3,9 @@ import {useParams} from "react-router-dom";
 import ItemList from './ItemList';
 
 const products = [
-    {id: 1, name:'Producto 1', stock:1, descripcion: 'una descripcion del producto', categoryId: 1},
-    {id: 2, name:'Producto 2', stock:12, descripcion: 'una descripcion del producto', categoryId: 2},
-    {id: 3, name:'Producto 3', stock:8, descripcion: 'una descripcion del producto', categoryId: 1}
+    {id: 1, name:'Producto 1', stock:1, descripcion: 'una descripcion del producto', categoryId: 1, precio:120},
+    {id: 2, name:'Producto 2', stock:12, descripcion: 'una descripcion del producto', categoryId: 2, precio:140},
+    {id: 3, name:'Producto 3', stock:8, descripcion: 'una descripcion del producto', categoryId: 1, precio:190}
 ];
 
 const fetchProductos = (idCategory) => {

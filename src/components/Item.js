@@ -1,5 +1,5 @@
 import React from 'react';
-import {Card, CardContent, Button} from '@material-ui/core/';
+import {Card, CardContent, Button} from '@mui/material';
 import { useHistory } from "react-router-dom"
 
 const Item = (props) => {

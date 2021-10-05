@@ -1,15 +1,16 @@
 import React, {useContext, useState} from 'react';
 import ItemCount from './ItemCount';
 import {CartContext} from '../context/CartContext';
-import {Card, CardContent, Button} from '@material-ui/core/';
+import {Card, CardContent, Button} from '@mui/material';
 import { useHistory } from "react-router-dom"
+import isEmpty from 'lodash/isEmpty';
 
 const ItemDetail = (props) => {
     const [countState, setCountState] = useState(1)
     
     const history = useHistory();
     
-    const cartHook = useContext(CartContext);console.log(cartHook)
+    const cartHook = useContext(CartContext);
 
     const addItem = () => {
         if (props.item.stock > countState) {
@@ -36,7 +37,7 @@ const ItemDetail = (props) => {
     }
 
     return <>
-        <Card className='CardRoot'>
+        <Card className='CardRoot' sx={{ maxWidth: 400 }} style={{alignItems:"center"}}>
             <CardContent>
                 <h2>{props.item.name}</h2>
                 <h3>{props.item.descripcion}</h3>
@@ -44,7 +45,7 @@ const ItemDetail = (props) => {
             </CardContent>
         </Card>
         <Button variant="contained" color="primary" size="small" onClick={()=> {addToCart(props.item)}}>Agregar a Carrito</Button>
-        <Button variant="contained" color="primary" size="small" onClick={()=> {goToCart()}}>Finalizar Compra</Button>
+        {!isEmpty(cartHook.cartState) && (<Button variant="contained" color="primary" size="small" onClick={()=> {goToCart()}}>Finalizar Compra</Button>)}
     </>
 }
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import Item from './Item';
-import Grid from '@material-ui/core/Grid';
+import Grid from '@mui/material/Grid';
 
 const ItemList = (props) => {
     return <>

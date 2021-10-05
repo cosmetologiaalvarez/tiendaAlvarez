@@ -7,6 +7,6 @@
     font-size: 14px;
 }
 
-.CardButton {
-    margin: 1rem 1rem;
+.itemCountCard .CardButton {
+    margin: 1px 2px;
 }

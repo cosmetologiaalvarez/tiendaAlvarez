@@ -1,6 +1,7 @@
 import React from "react";
 import ItemDetailContainer from './ItemDetailContainer.js';
 import ItemListContainer from './ItemListContainer.js';
+import NavBar from './NavBar.js';
 import Cart from './Cart.js';
 import {
   BrowserRouter,
@@ -11,6 +12,7 @@ import {
 const Router = () => {
     return (
         <BrowserRouter>
+            <NavBar/>
             <Switch>
                 <Route exact path="/">
                     <ItemListContainer />

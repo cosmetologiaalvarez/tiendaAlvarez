@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import {useParams} from "react-router-dom";
 import ItemDetail from './ItemDetail';
+import isEmpty from 'lodash/isEmpty';
+import CircularProgress from '@mui/material/CircularProgress';
 
 const itemDetails = [
-    {id: 1, name:'Producto 1', stock:1, descripcion: 'Descripcion del producto', categoryId: 1},
-    {id: 2, name:'Producto 2', stock:12, descripcion: 'Descripcion del producto', categoryId: 2},
-    {id: 3, name:'Producto 3', stock:8, descripcion: 'Descripcion del producto', categoryId: 1}
+    {id: 1, name:'Producto 1', stock:1, descripcion: 'Descripcion del producto', categoryId: 1, precio:120},
+    {id: 2, name:'Producto 2', stock:12, descripcion: 'Descripcion del producto', categoryId: 2, precio:140},
+    {id: 3, name:'Producto 3', stock:8, descripcion: 'Descripcion del producto', categoryId: 1, precio:190}
 ];
 
 const findItem = id => itemDetails.find(current => current.id == id);
@@ -28,9 +30,7 @@ const ItemDetailContainer = () => {
         }).catch(error => setItemDetail([]))
     }, [])
 
-    return <>
-        <ItemDetail item={itemDetail}/>
-    </>
+    return !isEmpty(itemDetail) ? <ItemDetail item={itemDetail}/> : <CircularProgress/>
 }
 
 export default ItemDetailContainer;
