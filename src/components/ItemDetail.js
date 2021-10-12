@@ -37,15 +37,15 @@ const ItemDetail = (props) => {
     }
 
     return <>
-        <Card className='CardRoot' sx={{ maxWidth: 400 }} style={{alignItems:"center"}}>
+        <Card className='CardRoot' sx={{ maxWidth: 400 }} style={{textAlign:'center'}}>
             <CardContent>
                 <h2>{props.item.name}</h2>
-                <h3>{props.item.descripcion}</h3>
+                <p>{props.item.descripcion}</p>
                 <ItemCount stock={props.item.stock} addItem={addItem} removeItem={removeItem} amount={countState}/>
             </CardContent>
+            <Button variant="contained" color="primary" size="small" onClick={()=> {addToCart(props.item)}}>Agregar a Carrito</Button>
+            {!isEmpty(cartHook.cartState) && (<Button variant="contained" color="primary" size="small" onClick={()=> {goToCart()}}>Ir al carrito</Button>)}
         </Card>
-        <Button variant="contained" color="primary" size="small" onClick={()=> {addToCart(props.item)}}>Agregar a Carrito</Button>
-        {!isEmpty(cartHook.cartState) && (<Button variant="contained" color="primary" size="small" onClick={()=> {goToCart()}}>Finalizar Compra</Button>)}
     </>
 }
 

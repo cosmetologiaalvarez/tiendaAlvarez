@@ -4,7 +4,7 @@ import ItemDetail from './ItemDetail';
 import isEmpty from 'lodash/isEmpty';
 import CircularProgress from '@mui/material/CircularProgress';
 import find from 'lodash/find';
-import getCollection from '../utils/getCollection';
+import {getCollection} from '../utils/getCollection';
 
 const ItemDetailContainer = () => {
     const [itemDetail, setItemDetail] = useState([])
@@ -16,7 +16,7 @@ const ItemDetailContainer = () => {
         }).catch(error => setItemDetail([]))
     }, [])
 
-    return !isEmpty(itemDetail) ? <ItemDetail item={itemDetail}/> : <CircularProgress/>
+    return !isEmpty(itemDetail) ? <div style={{textAlign:'center'}}><ItemDetail item={itemDetail}/></div> : <CircularProgress/>
 }
 
 export default ItemDetailContainer;

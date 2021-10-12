@@ -13,5 +13,5 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig)
 
 export function getDataBase() {
-    return getFirestore(app);
+  return getFirestore(app);
 }

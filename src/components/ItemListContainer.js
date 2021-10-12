@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {useParams} from "react-router-dom";
 import ItemList from './ItemList';
-import getCollection from '../utils/getCollection';
+import {getCollection} from '../utils/getCollection';
 
 const ItemListContainer = (props) => {
     const [productos, setProductos] = useState([])
