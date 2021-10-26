@@ -8,5 +8,6 @@
 }
 
 .itemCountCard .CardButton {
-    margin: 1px 2px;
+    margin: 0px 2px;
+    padding: 8px 0px;
 }

@@ -15,10 +15,7 @@ const NavBar = () => {
                 <Link to='/' style={{color: "white"}} >Brand</Link>
             </Grid>
             <Grid container className="navBarItem" item xs={3}>
-                <Link to='/' >Shop</Link>
-            </Grid>
-            <Grid container className="navBarItem" item xs={4}>
-                <Link to='#' >Us</Link>
+                <Link to='/' >Home</Link>
             </Grid>
             <Grid container className="navBarItem" item xs={3}>
                 <Link to='/cart' >Cart</Link>

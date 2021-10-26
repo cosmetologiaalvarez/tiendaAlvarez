@@ -1,11 +1,12 @@
 import React, {useContext} from 'react';
 import {CartContext} from '../context/CartContext';
 import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import isEmpty from 'lodash/isEmpty';
 import Alert from '@mui/material/Alert';
+import IconButton from '@mui/material/IconButton';
+import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
 import {setCollection} from '../utils/getCollection';
 
 const Cart = () => {
@@ -27,58 +28,42 @@ const Cart = () => {
         cartHook.clearCart()
     }
 
-    function Item(props) {
-        const { sx, ...other } = props;
-        return (
-            <Box
-            sx={{
-                bgcolor: 'secondary.main',
-                color: 'white',
-                p: 1,
-                borderRadius: 1,
-                textAlign: 'center',
-                fontSize: 19,
-                fontWeight: '600',
-                ...sx,
-            }}
-            {...other}
-            />
-        );
-    }
-
-    return <Box>
-        {cartHook.cartState.map(product => {
-            return (
-                <div style={{ width: '100%' }}>
-                    <Box
-                        sx={{
-                        display: 'grid',
-                        columnGap: 3,
-                        rowGap: 1,
-                        padding: 1,
-                        gridTemplateColumns: 'repeat(4, 1fr)',
-                        }}
-                    >
-                        <Item>{product.name}</Item>
-                        <Item>{product.cantidad}</Item>
-                        <Item>{product.precio}</Item>
-                        <Item><Button variant="contained" color="secondary" onClick={() => cartHook.removeItem(product)}>Remove Item</Button></Item>
-                    </Box>
-                </div>
-            )
-        })}
-        <Box
-            sx={{
-            display: 'grid',
-            columnGap: 3,
-            rowGap: 1,
-            gridTemplateColumns: 'repeat(2, 1fr)',
-            }}
-        >
-            <Item>$ {totalProduct}</Item>
-            <Item><Button variant="contained" color="secondary" size="small" onClick={()=> {sendOrder()}}>Finalizar compra</Button></Item>
+    return <Box style={{ textAlign:'center'}}>
+            {cartHook.cartState.map(product => {
+                return (
+                    <Grid container spacing={1} key={product.id} style={{ border: '1px dashed grey', margin:4, width:'99.4%' }}>
+                        <Grid item  xs={2}>
+                            <b>Detalle de Producto</b>
+                        </Grid>
+                        <Grid item  xs={4}>
+                            {product.name}
+                        </Grid>
+                        <Grid item  xs={2}>
+                            {product.cantidad} unidades
+                        </Grid>
+                        <Grid item  xs={2}>
+                            ${product.precio}
+                        </Grid>
+                        <Grid item  xs={2}>
+                            <IconButton aria-label="delete" size="small">
+                                <RemoveCircleIcon fontSize="inherit"size="small" onClick={()=> { cartHook.removeItem(product) }} />
+                            </IconButton>
+                        </Grid>
+                    </Grid>
+                )
+            })}
+            <Grid container spacing={1} justifyContent="center" style={{ marginTop:'3em' }}>
+                <Grid item  xs={3}>
+                    <Button variant="contained" color="secondary" size="small" onClick={()=> {cartHook.clearCart()}}>Vaciar carrito</Button>
+                </Grid>
+                <Grid item  xs={2.5}>
+                    <Button variant="contained" color="secondary" size="small" onClick={()=> {sendOrder()}}>Finalizar compra</Button>
+                </Grid>
+                <Grid item  xs={6.5}>
+                    <div>Total:  ${totalProduct}</div>
+                </Grid>
+            </Grid>
         </Box>
-    </Box>
 }
 
 export default Cart

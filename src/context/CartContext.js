@@ -5,7 +5,7 @@ export const CartContext = createContext([])
 const CartProvider = ({defaultItem=[], children}) => {
     const [cartState, setCartState] = useState(defaultItem)
 
-    const addItem = (product, amount) => {console.log(cartState)
+    const addItem = (product, amount) => {
         if (!isInCart(product)) {
             setCartState([...cartState, product])
             product.cantidad = amount;
