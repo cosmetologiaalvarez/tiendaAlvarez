@@ -17,7 +17,7 @@ const Category = (props) => {
         <Grid container spacing={2} style={{padding:'2rem'}} justifyContent="center">
             {categorias.map(categoria => {
                 return <Grid item xs={2} key={categoria}>
-                    <Button onClick={()=> {verDetalle(categoria)}}>Categoria {categoria}</Button>
+                    <Button variant="contained" disabled={categoria == props.selected} onClick={()=> {verDetalle(categoria)}}>Categoria {categoria}</Button>
                 </Grid>
             })}
         </Grid>

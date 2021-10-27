@@ -19,7 +19,7 @@ const ItemListContainer = (props) => {
     const productsFiltered = categoryId != null ? productos.filter(current => current.category == categoryId) : productos;
 
     return <>
-        <Category prod={productos}/>
+        <Category prod={productos} selected={categoryId}/>
         <ItemList prod={productsFiltered}/>
     </>
 }

@@ -10,14 +10,14 @@ const NavBar = () => {
     const cartHook = useContext(CartContext);
 
     return (
-        <Grid container className="navBarContent" alignItems="center">
-            <Grid container className="navBarItem" item xs={1}>
+        <Grid container className="navBarContent" justifyContent="center">
+            <Grid className="navBarItem" item>
                 <Link to='/' style={{color: "white"}} >Brand</Link>
             </Grid>
-            <Grid container className="navBarItem" item xs={3}>
+            <Grid className="navBarItem" item >
                 <Link to='/' >Home</Link>
             </Grid>
-            <Grid container className="navBarItem" item xs={3}>
+            <Grid className="navBarItem" item >
                 <Link to='/cart' >Cart</Link>
             </Grid>
             <Grid item xs={1}>{!isEmpty(cartHook.cartState)  && <CartWidget/>}</Grid>
