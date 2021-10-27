@@ -10,9 +10,9 @@ export async function getCollection (collectionName) {
 
 export async function setCollection (collectionName, data) {
     try {
-    const docRef = await addDoc(collection(getDataBase(), collectionName), {data});
-    console.log("Document written with ID: ", docRef.id);
+        const docRef = await addDoc(collection(getDataBase(), collectionName), data);
+        console.log("Document written with ID: ", docRef.id);
     } catch (e) {
-    console.error("Error adding document: ", e);
+        console.error("Error adding document: ", e);
     }
 }

@@ -3,7 +3,6 @@ import ItemCount from './ItemCount';
 import {CartContext} from '../context/CartContext';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
 import CardMedia from '@mui/material/CardMedia';
 import { useHistory } from "react-router-dom"
 import isEmpty from 'lodash/isEmpty';
@@ -36,10 +35,6 @@ const ItemDetail = (props) => {
 
     const addToCart = (item) => {
         cartHook.addItem(item, countState)
-    }
-
-    const clearCart = (item) => {
-        cartHook.clearCart()
     }
 
     return <>
