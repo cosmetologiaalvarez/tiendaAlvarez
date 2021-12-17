@@ -1,6 +1,6 @@
 # Proyecto Ecommerce
 
-Este proyecto fue desarrollado durante el transcurso del (curso React de Coderhouse)[https://www.coderhouse.com/online/reactjs] en el cual se instruye sobre el desarrollo de aplicaciones orientados a ecommerce.
+Este proyecto fue desarrollado durante el transcurso del [curso React de Coderhouse](https://www.coderhouse.com/online/reactjs) en el cual se instruye sobre el desarrollo de aplicaciones orientados a ecommerce.
 
 ##  Dependencias
 
